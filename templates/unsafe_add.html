@@ -29,7 +29,7 @@
 
 <!-- Fixed navbar -->
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" href="{{ url_for('index') }}">Start Bootstrap</a>
+    <a class="navbar-brand" href="{{ url_for('unsafe_index') }}">Start Bootstrap</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -39,12 +39,12 @@
         <ul class="navbar-nav mr-auto">
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+                <a class="nav-link" href="{{ url_for('unsafe_index') }}">Home</a>
             </li>
 
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('add') }}">Add</a>
+                <a class="nav-link" href="{{ url_for('unsafe_add') }}">Add</a>
             </li>
 
         </ul>
@@ -70,7 +70,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-            <form name="addForm" id="addForm" method="POST" action="{{ url_for('addpost') }}" novalidate>
+            <form name="addForm" id="addForm" method="POST" action="{{ url_for('unsafe_addpost') }}" novalidate>
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label>Title</label>

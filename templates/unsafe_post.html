@@ -39,11 +39,11 @@
         <ul class="navbar-nav mr-auto">
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+                <a class="nav-link" href="{{ url_for('unsafe_index') }}">Home</a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('add') }}">Add</a>
+                <a class="nav-link" href="{{ url_for('unsafe_add') }}">Add</a>
             </li>
 
         </ul>
@@ -57,11 +57,11 @@
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="post-heading">
-                    <h1>{{ post.title|e }}</h1>
-                    <h2 class="subheading">{{ post.subtitle|e }}</h2>
+                    <h1>{{ post[1] | safe }}</h1>
+                    <h2 class="subheading">{{ post[2] | safe }}</h2>
                     <span class="meta">Posted by
-                {{ post.author|e }}
-                on {{ post.date_posted.strftime('%B %d, %Y')|e }}</span>
+                {{ post[3] | safe }}
+                on {{ post[4] | safe }}</span>
                 </div>
             </div>
         </div>
@@ -73,7 +73,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
-                {{ post.content| safe }}
+                {{ post[5]| safe }}
             </div>
         </div>
     </div>
